@@ -1,0 +1,12 @@
+#staticImage {
+  display: none;
+}
+
+.hidden-text {
+  display: none;
+}
+
+.card_title {
+  color: #000000;
+  font-weight: bold;
+}

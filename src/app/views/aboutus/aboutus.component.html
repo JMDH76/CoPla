@@ -1,0 +1,30 @@
+<main class="p-0">
+  <div class="container">
+    <div class="row mt-2">
+      <!-- cards -->
+      @for(card of cards; track card){
+      <div class="col-4 mx-auto">
+        @if(currentLanguage === 'es') {
+        <div class="card mt-5 mx-3 bg-transparent border-0 ">
+          <img src={{card.cardImageUrl}} class="card-img-top img-fluid image shadow-lg" alt={{card.cardImageAlt}}>
+          <div class="card-body card-text-justify">
+            <h4 class="card_title text-start mb-0">{{card.cardTitle}}</h4>
+            <hr class="mt-0 border-2 border-success">
+            <p class="fst-italic text-justify" [innerHTML]="card.cardText">{{card.cardText}}</p>
+          </div>
+        </div>
+        } @else if(currentLanguage === 'en') {
+          <div class="card mt-5 mx-3 bg-transparent border-0 ">
+            <img src={{card.cardImageUrl}} class="card-img-top img-fluid image shadow-lg" alt={{card.cardImageAlt_en}}>
+            <div class="card-body card-text-justify">
+              <h4 class="card_title text-start mb-0">{{card.cardTitle_en}}</h4>
+              <hr class="mt-0 border-2 border-success">
+              <p class="fst-italic text-justify" [innerHTML]="card.cardText_en"></p>
+            </div>
+          </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</main>

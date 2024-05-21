@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat, Roboto", sans-serif;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff;
+  background-image: url(../src/assets/images/curva_verde.png);
+  /* background-image: url(../src/assets/images/fondo_verde_1.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+.form_field {
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 25px;
+  font-size: 14px;
+  padding: 0;
+  padding-left: 10px;
+ /*  border-color: rgba(25, 135, 84, 0.5); */
+}
+
+p {
+  text-align: justify;
+  font-size: 14px;
+}
+.breadcrumb{
+  font-size: 12px;
+}
+
+.btn-3d {
+  box-shadow: 0 0 0 0 rgba(25, 135, 84, 1);
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-3d:active {
+  box-shadow: 0 2px 0 0 rgba(25, 135, 84, 0.2);
+  transform: translateY(2px);
+}
+
+.form-control:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+
+.form-control:hover{
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}

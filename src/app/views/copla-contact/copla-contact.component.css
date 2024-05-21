@@ -1,0 +1,13 @@
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+}
+
+.file-upload {
+  display: none;
+}
+
+#uploadImage
+{
+  border: 1px solid #155e1b
+}

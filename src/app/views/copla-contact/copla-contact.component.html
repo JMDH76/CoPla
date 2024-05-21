@@ -1,0 +1,73 @@
+<app-header [case]="case"></app-header>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="row mt-1 mb-3">
+        <div class="breadcrumb fw-bold text-decoration-none">
+          <a href="../copla-home/" class="text-black text-decoration-none">{{breadcrumb}}&nbsp;&nbsp;></a>
+          <a href="../copla-contact/" class="text-black text-decoration-none">&nbsp;&nbsp;{{currentLanguage==='es' ?
+            actualPage.es : actualPage.en}}</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <app-copla-aside></app-copla-aside>
+        </div>
+        <div class="col-10">
+          <!-- Form send email -->
+          <div class="row text-black mt-4">
+            <div class="col-md-5 offset-1">
+              <h2 class="text-start mb-0 fw-bold">{{currentLanguage==='es' ? formTitle.es : formTitle.en}}</h2>
+              <hr class="mt-0 border-2 border-success">
+              <p class="mb-3 col-12 fst-italic"
+                [innerHTML]="currentLanguage==='es' ? initialText.es : initialText.en"></p>
+
+              <!-- fields -->
+              <form (ngSubmit)="sendEmail()">
+                @for(item of formInputFields; track item;let i=$index; let first=$first){
+                @if(i < 2) { <div [ngClass]="{'mt-2': i != 0}" class="form-group">
+                  <input class="form-control form_field border-success" type={{item.fieldType}} id={{item.fieldId}}
+                    [(ngModel)]="first ? userName : userCommunity" name={{item.fieldId}}
+                    [ngModelOptions]="{standalone: true}" readonly>
+            </div>
+
+            } @else if(i === 2 ){
+            <div class="form-group mt-2">
+              <textarea class="form-control border-success" id="textoLibre" autofocus [(ngModel)]="contentText"
+                name="nombreComunidad" id={{item.fieldId}} rows="6"
+                [placeholder]="currentLanguage==='es' ? item.fieldPlaceholder : item.fieldPlaceholder_en"></textarea>
+            </div>
+            }
+            }
+            <button class="col-4 offset- btn send-button mt-4 text-white bg-success">{{currentLanguage ==='es' ?
+              formButtonText.es : formButtonText.en}}</button>
+            </form>
+          </div>
+
+          <!-- Send image -->
+          <div class="col-5 offset-1">
+            <h2 class="text-start mb-0 fw-bold">{{currentLanguage==='es' ? formTitle2.es : formTitle2.en}}</h2>
+            <hr class="mt-0 border-2 border-success">
+            <p class="mb-3 col-12 fst-italic">{{currentLanguage==='es' ? publishAds.es : publishAds.en}}</p>
+
+            <div class="custom-file-upload btn text-white bg-success" [hidden]="isImageSelected">
+              <input type="file" id="file" class="file-upload btn-3d" (change)="onFileSelected($event)" #fileInput multiple>
+              <label for="file"> {{currentLanguage === 'es' ? 'Elegir imagen' : 'Select image'}}</label>
+            </div>
+            <div class="col-8 offset-2 mt-4 my-3">
+              <img [src]="imagePreview" id="uploadImage" class="img-fluid" [hidden]="!imagePreview">
+            </div>
+            <div [hidden]="!isImageSelected">
+              <button (click)="onUpload()" class="col-4 offset-4 btn send-button mt-4 text-white bg-success">{{currentLanguage==='es' ? 'Subir imagen' : 'Upload image' }}</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>
+<app-copla-footer></app-copla-footer>

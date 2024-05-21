@@ -1,0 +1,9 @@
+:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+
+#back_arrow
+{
+  height: 50%;
+}

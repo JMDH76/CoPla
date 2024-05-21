@@ -1,0 +1,32 @@
+main {
+  flex: 1;
+  height: 80%;
+}
+
+
+.btn-3d {
+  box-shadow: 0 0 0 0 rgba(25, 135, 84, 1);
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-3d:active {
+  box-shadow: 0 2px 0 0 rgba(25, 135, 84, 0.2);
+  transform: translateY(3px);
+}
+
+.options_text{
+  font-size: 14px;
+}
+
+body{
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

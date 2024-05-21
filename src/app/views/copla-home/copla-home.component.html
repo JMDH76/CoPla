@@ -1,0 +1,126 @@
+<app-header [case]="case"></app-header>
+
+<main>
+  <div class="container border-1 border-secondary">
+    <div class="row">
+      <div class="row mt-1 mb-3">
+        <div class="breadcrumb fw-bold text-decoration-none">
+          <a href="../copla-home/" class="text-black text-decoration-none">{{breadcrumb}}&nbsp;&nbsp;></a>
+          <a href="../copla-home/" class="text-black text-decoration-none">&nbsp;&nbsp;{{currentLanguage ==='es' ?
+            actualPage.es : actualPage.en}}</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <app-copla-aside></app-copla-aside>
+        </div>
+
+        <div class="col-5 mx-auto ">
+          <div class="offset-1 col-10">
+            <div class="card mt-0 mx-3 bg-transparent border-0">
+              <h2 class="fw-bold mb-0">{{currentLanguage === 'es' ? newsTitle.es : newsTitle.en}}</h2>
+              <hr class="m-0 border-2 border-success mb-5">
+              <div id="carousel_1" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel_1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  @for(item of carousel1_Items; track item; let i =$index){
+                  <div class="carousel-item active">
+                    <img src={{item.notice_link}} class="d-block w-100" alt="{{item.notice_title}}"
+                      (click)="openModalNotices(i)">
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="carouselModal{{i}}" tabindex="-1" aria-labelledby="carouselModal"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-md">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <img src={{item.notice_link}} class="img-fluid">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-3d bg-success text-white"
+                            data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel_1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-5 mx-auto ">
+          <div class="offset-1 col-10">
+            <div class="card mt-0 mx-3 bg-transparent border-0">
+              <h2 class="fw-bold mb-0">{{currentLanguage === 'es' ? noticeBoard.es : noticeBoard.en}}</h2>
+              <hr class="m-0 border-2 border-success mb-5">
+              <div id="carousel_2" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel_2" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel_2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel_2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  @for(item of carousel2_Items; track item; let i =$index){
+                  <div class="carousel-item active">
+                    <img src={{item.notice_link}} class="d-block w-100" alt="{{item.notice_title}}"
+                      (click)="openModalAds(i)">
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="carouselModal2{{i}}" tabindex="-1" aria-labelledby="carouselModal2"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-md">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <img src={{item.notice_link}} class="img-fluid">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-3d bg-success text-white"
+                            data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel_2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel_2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</main>
+<app-copla-footer></app-copla-footer>

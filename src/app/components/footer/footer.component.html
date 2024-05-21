@@ -1,0 +1,66 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row py-0 my-0 align-items-center">
+
+      <!-- Map -->
+      <div class="map col-3 col-sm-2 mt-5 offset-sm-2">
+        <a href={{companyMap.href}} target="_blank">
+          @if(currentLanguage === 'es') {
+          <img class="img-fluid d-block w-100 mt-0 mt-sm-5" src={{companyMap.url}} alt={{companyMap.alt}}>
+          }@else if(currentLanguage === 'en') {
+          <img class="img-fluid d-block w-100 mt-0 mt-sm-5" src={{companyMap.url}} alt={{companyMap.alt_en}}>
+          }
+        </a>
+      </div>
+
+      <!-- Address -->
+      <div class="company col-3 col-sm-2 text-start mt-3 mt-sm-5">
+        <div class="mt-5">
+          <h5 class="fw-bold footer_text_h5">{{companyName}}</h5>
+          <h6 class="direction_text mt-3 small" [innerHTML]="companyAddress"></h6>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="social col-3 mms-3 col-sm-2 mt-sm-5">
+        <div class="mt-5 mt-sm-5">
+          @for(item of socialImages; track item){
+
+          @if(currentLanguage === 'es') {
+          <img class="img-fluid ms-2 mt-1" src={{item.url}} alt={{item.alt}}>
+          } @else if(currentLanguage === 'en') {
+          <img class="img-fluid ms-2 mt-1" src={{item.url}} alt={{item.alt_en}}>
+          }
+          }
+        </div>
+      </div>
+
+      <!-- copyrigth -->
+      <div class="copyright col-3 col-sm-4 mt-5 ps-5 mb-0">
+        <div class="row mt-5">
+          <div class="offset-sm-3 col-9 col-sm-3">
+            <img class="img-fluid " src={{imageLogo}} alt="logotipo Copla">
+          </div>
+        </div>
+        <div class="row">
+          @if(currentLanguage === 'es') {
+          <div class="offset-sm-4 col-8 footer_text ms-sm-2 ms-sm-3 text-center" [innerHTML]="copyrigth"> </div>
+          } @else if(currentLanguage === 'en') {
+          <div class="offset-sm-4 col-8 footer_text ms-sm-2 ms-sm-3 text-center" [innerHTML]="copyrigth_en"> </div>
+          }
+        </div>
+      </div>
+
+      <!-- Policy, Terms and conditions -->
+    </div>
+    <div class="row footer_text fw-semibold">
+      @for(item of termsTexts; track item){
+      @if(currentLanguage === 'es') {
+      <div class={{item.format}}>{{item.text_es}}</div>
+      } @else if(currentLanguage === 'en') {
+      <div class={{item.format}}>{{item.text_en}}</div>
+      }
+      }
+    </div>
+  </div>
+</footer>

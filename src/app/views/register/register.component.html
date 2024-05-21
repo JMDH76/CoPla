@@ -1,0 +1,99 @@
+<main>
+  <div class=" container">
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <!-- Fields -->
+          <div class="row group_1 offset-3 mt-5">
+            <div class="col-6 justify-content-between mt-4">
+              <h3 class="mb-0 fw-bold">{{currentLanguage==='es' ? formTitle.es : formTitle.en}}</h3>
+              <hr class="mt-0 border-success border-2">
+            </div>
+          </div>
+
+          <div class="row group_1 offset-3">
+            <div class="col-6 justify-content-between">
+
+              <div class="col mb-2">
+                <select class="form-select form_field ps-1 border-success" id="community" autofocus
+                  formControlName="community">
+                  <option value='' selected disabled>{{currentLanguage ==='es' ? selectInitialOption.es :
+                    selectInitialOption.en }}</option>
+                  <option value='2'>{{communities[1].community_name}}</option>
+                  <option value='3'>{{communities[2].community_name}}</option>
+                </select>
+              </div>
+
+              @for(item of formFieldsGroup1; track item;){
+              <div class="col mb-2">
+                <input type="{{item.type}}" class="form-control form_field border-success ps-1" id="{{item.id}}"
+                  formControlName="{{item.id}}"
+                  [placeholder]=" currentLanguage == 'es' ? item.placeholder: item.placeholder_en">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="row group_2 offset-3 mb-2">
+            <div class="col-6 d-flex justify-content-between">
+              @for(item of formFieldsGroup2; track item;){
+              <div class="col-3">
+                <input type="{{item.type}}" class="form_field form-control border-success ps-1" id="{{item.id}}"
+                  formControlName="{{item.id}}"
+                  [placeholder]=" currentLanguage == 'es' ? item.placeholder: item.placeholder_en">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="row group_3 offset-3 mb-2">
+            <div class="col-6 d-flex justify-content-between">
+              @for(item of formFieldsGroup3; track item; let last=$last){
+              <div [ngClass]="{'col-7': last}" class=" col-4">
+                <input type="{{item.type}}" class="form-control border-success form_field ps-1" id="{{item.id}}"
+                  formControlName="{{item.id}}"
+                  [placeholder]=" currentLanguage == 'es' ? item.placeholder: item.placeholder_en">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="row group_4 d-flex offset-3 mb-2">
+            <div class="col-6 d-flex justify-content-between">
+              @for(item of formFieldsGroup4; track item){
+              <div class="col-6">
+                <input type="{{item.type}}" class="form-control form_field border-success ps-1" id="{{item.id}}"
+                  formControlName="{{item.id}}"
+                  [placeholder]=" currentLanguage == 'es' ? item.placeholder: item.placeholder_en">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="row group_5 d-flex offset-3 mb-5">
+            <div class="col-6 d-flex justify-content-between">
+              @for(item of formFieldsGroup5; track item; let last=$last){
+              <div [ngClass]="{'col-6 me-0': !last}" class="col-5 me-1">
+                <input type="{{item.type}}" class="form-control form_field border-success ps-1" id="{{item.id}}"
+                  formControlName="{{item.id}}"
+                  [placeholder]=" currentLanguage == 'es' ? item.placeholder: item.placeholder_en">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="row group_6 d-flex offset-3 mt-5">
+            <div class="col-6 d-flex justify-content-between">
+              @for(item of buttons; track item; let i =$index; let first=$first){
+              <button type="{{item.type}}" [disabled]='item.state' [routerLink]="item.link"
+                class="col-3 btn send-button text-white bg-success btn-3d">{{currentLanguage === 'es' ? item.text:
+                item.text_en}}</button>
+              }
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

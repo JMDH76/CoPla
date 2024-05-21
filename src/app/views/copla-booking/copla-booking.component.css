@@ -1,0 +1,60 @@
+label {
+  font-size: 14px;
+}
+
+#availability {
+  font-size: 20px;
+}
+
+option {
+  font-style: italic;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  animation: scrolling 15s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+button {
+  font-size: 0.8em;
+}
+li {
+  font-size: 14px;
+  color: black;
+}
+.trash_icon {
+  width: 20px;
+  height: 20px;
+}
+
+.form_field:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+
+.form_field:hover {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+button:focus {
+  box-shadow: none;
+}
+.icon {
+  opacity: 0.5;
+}
+.icon:hover{
+  opacity: 1;
+}
+
+.selectedLine:hover{
+  font-weight: bold;
+  background-color: rgba(25,135,84, 0.1);
+}

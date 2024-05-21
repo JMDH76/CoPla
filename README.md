@@ -1,20 +1,27 @@
-# PFC CoPla
-## Proyecto fin de ciclo DAW 2023/24 Florida Universitaria
-## José Manuel Domínguez Hernández
-### Florida Universitaria 2023/24
+# Copla
 
-Acceso a OneDrive: [Enlace](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/Ej1p70oKac1OhLMsgm_k24QBqORCVhkxMyLbrS5XOustbw?e=Cwf4cg)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
-Acceso repositorio: [Enlace](https://github.com/JMDH76/CoPla)
+## Development server
 
-| Usuarios   | Password | Rol           | Comunidad |
-|------------|----------|---------------|-----------|
-| admin1     | admin1   | Administrador | 1         |
-| user1      | user1    | Usuario       | 1         |
-| montepinar | 123456   | Recepción     | 1         |
-| admin2     | admin2   | Administrador | 2         |
-| user2      | user2    | Usuario       | 2         |
-| atalaya    | 123456   | Recepción     | 2         |
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Una vez descargado el proyecto para arrancar el servidor local ejecutar en un terminal el siguiente comando desde la raiz del proyecto:
-`copla/` `npm run localserver`
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

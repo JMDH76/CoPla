@@ -1,0 +1,15 @@
+<footer class="footer mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        @if(currentLanguage === 'es') {
+        <p class="text-center"><strong>{{year}}&nbsp;&copy; Community Platform &nbsp;&nbsp;{{version}}
+          </strong>&nbsp;&nbsp; Todos los derechos reservados</p>
+        } @else if(currentLanguage === 'en') {
+        <p class="text-center"><strong>{{year}}&nbsp;&copy; Community Platform &nbsp;&nbsp;{{version}}
+          </strong>&nbsp;&nbsp; All rights reserved</p>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

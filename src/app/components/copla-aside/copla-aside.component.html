@@ -1,0 +1,100 @@
+<aside>
+  <div class="container">
+    <div class="row ms-0">
+      <div class="row m-0 ps-0">
+
+        @if(currentLanguage === 'es') {
+        <h3 class="fw-bold text-start text-black ps-0 ms-0 mb-0">Menú</h3>
+        } @else if(currentLanguage === 'en') {
+        <h3 class="fw-bold text-start text-black ps-0 ms-0 mb-0">Menu</h3>
+        }
+      </div>
+    </div>
+    <hr class="border-success border-2 shadow-sm m-0 mb-1">
+
+    <div class="row m-0 bg-transparent fw-bold text-black">
+      <nav class="p-0 bg-transparent">
+        <ul id="verticalMenu" class="nav nav-pills flex-column shadow-lg">
+          @if(currentLanguage === 'es') {
+          @for(item of navItems; track item; let i = $index){
+          @if(i<4){ <li class="nav-item">
+            <a [ngClass]="{'active': ('/' + actualRoute) === item.href}" id="button{{i+1}}" class="nav-link ps-2 btn-3d"
+              [routerLink]="item.href">{{item.text}}</a>
+            <hr class="border-success m-0">
+            </li>
+            } @else if (i===4){
+            @if(rol==='Administrador'){
+            <li class="nav-item">
+              <a [ngClass]="{'active': ('/' + actualRoute) === item.href}" id="button{{i+1}}"
+                class="nav-link ps-2 btn-3d active" [routerLink]="item.href">{{item.text}}</a>
+              <hr class="border-success m-0">
+            </li>
+            }
+            } @else {
+            <li class="nav-item">
+              <a [ngClass]="{'active': actualRoute === 'copla-parcels-registry' || actualRoute==='copla-parcels-consult'}"
+                id="button{{i+1}}" class="nav-link ps-2 btn-3d active">{{item.text}}</a>
+              <hr class="border-success m-0">
+              <ul class="submenu list-group text-center">
+                @if(rol ==='Administrador' || rol ==='Recepción'){
+                <li class="nav-item">
+                  <a [ngClass]="{'active': actualRoute === 'copla-parcels-registry'}" id="button{{i+2}}"
+                    class="nav-link  btn-3d active" [routerLink]="subNavItems[0].href">{{subNavItems[0].text}}</a>
+                  <hr class="border-success m-0">
+                </li>
+                }
+                <li class="nav-item">
+                  <a [ngClass]="{'active': actualRoute === 'copla-parcels-consult'}" id="button{{i+3}}"
+                    class="nav-link btn-3d active" [routerLink]="subNavItems[1].href">{{subNavItems[1].text}}</a>
+                  <hr class="border-success m-0">
+                </li>
+
+              </ul>
+            </li>
+            }
+            }
+            <!-- Englis version -->
+            } @else if(currentLanguage === 'en') {
+            @for(item of navItems; track item; let i = $index){
+            @if(i<4){ <li class="nav-item">
+              <a [ngClass]="{'active': ('/' + actualRoute) === item.href}" id="button{{i+1}}"
+                class="nav-link ps-2 btn-3d " [routerLink]="item.href">{{item.text_en}}</a>
+              <hr class="border-success m-0">
+              </li>
+              } @else if (i===4){
+              @if(rol==='Administrador'){
+              <li class="nav-item">
+                <a [ngClass]="{'active': ('/' + actualRoute) === item.href}" id="button{{i+1}}"
+                  class="nav-link ps-2 btn-3d active" [routerLink]="item.href">{{item.text_en}}</a>
+                <hr class="border-success m-0">
+              </li>
+              }
+              } @else {
+              <li class="nav-item">
+                <a [ngClass]="{'active': ('/' + actualRoute) === 'copla-parcels-registry' || actualRoute === 'copla-parcels-consult'}"
+                  id="button{{i+1}}" class="nav-link ps-2 btn-3d active">{{item.text_en}}</a>
+                <hr class="border-success m-0">
+                <ul class="submenu list-group text-center">
+                  @if(rol ==='Administrador' || rol ==='Recepción'){
+                  <li class="nav-item">
+                    <a [ngClass]="{'active': actualRoute === 'copla-parcels-registry'}" id="button{{i+2}}"
+                      class="nav-link btn-3d active" [routerLink]="subNavItems[0].href">{{subNavItems[0].text_en}}</a>
+                    <hr class="border-success m-0">
+                  </li>
+                  }
+                  <li class="nav-item">
+                    <a [ngClass]="{'active': actualRoute === 'copla-parcels-consult'}" id="button{{i+3}}"
+                      class="nav-link btn-3d active" [routerLink]="subNavItems[1].href">{{subNavItems[1].text_en}}</a>
+                    <hr class="border-success m-0">
+                  </li>
+
+                </ul>
+              </li>
+              }
+              }
+              }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</aside>

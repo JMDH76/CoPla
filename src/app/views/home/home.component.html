@@ -1,0 +1,45 @@
+<main>
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-8 offset-2 mt-1 mb-5 mb-sm-0">
+        <div id="carousel" class="carousel slide " data-bs-ride="carousel">
+          <div class="carousel-inner ">
+
+            <!-- Carousel Items -->
+            @for(item of images; track item; let i = $index){
+            <div [ngClass]="{'active': i === 0}" class="carousel-item shadow-lg">
+              <h1 class="caption-bg item fw-bold text-center">{{currentLanguage === 'es' ? item.title : item.title_en}}
+              </h1>
+              <div>
+                <h2 class="caption-bg item_h2 text-center"
+                  [innerHTML]="currentLanguage === 'es' ? item.text_es : item.text_en"></h2>
+              </div>
+              <div class="carousel-caption ">
+              </div>
+              <img class="img-fluid d-block w-100 rounded" src="{{item.url}}" alt="Vista de comunidadd de vecinos">
+            </div>
+            }
+          </div>
+
+          <!-- Manual Shift Arrows -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon icon-bg opacity-50" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon icon-bg opacity-50"></span>
+          </button>
+
+          <!-- Bottom Position Indicator -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="4"></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

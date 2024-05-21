@@ -1,0 +1,132 @@
+<header class="header p-0 d-block">
+  @if(case === 0){
+  <div class="container py-0">
+    <!-- Header principal -->
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-ligth mt-0 col-9">
+        <a class="col-3 col-sm-2 col-md-2 ms-2 mx-sm-0 navbar-brand" href="">
+          <img src={{imageLogo}} alt="logotipo Copla" class="img-fluid">
+        </a>
+
+        <button class="navbar-toggler rounded-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-8 mt-5 mx-1 mx-sm-5 collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav nav-pills">
+            @if(currentLanguage === 'es'){
+            @for(content of navBottons; track content; let last=$last; let first=$first){
+            <li [ngClass]="{'ms-lg-5': last}" class="nav-item mx-1 me-lg-3" data-bs-toggle='collapse'
+              data-bs-target='.navbar-collapse.show'>
+              <a [ngClass]="{'active': first}" class='nav-link rounded-1 btn-3d' [attr.aria-current]="'page'"
+                routerLink={{content.routerLink}} routerLinkActive="active">{{content.title_es}}</a>
+            </li>
+            }
+            } @else if(currentLanguage==='en'){
+            @for(content of navBottons; track content; let last=$last; let first=$first){
+            <li [ngClass]="{'ms-lg-5': last}" class="nav-item mx-1 me-lg-3" data-bs-toggle='collapse'
+              data-bs-target='.navbar-collapse.show'>
+              <a [ngClass]="{'active': first}" class='nav-link rounded-1 btn-3d' [attr.aria-current]="'page'"
+                routerLink={{content.routerLink}} routerLinkActive="active">{{content.title_en}}</a>
+            </li>
+            }
+            }
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Botones configuracion. Sin enlaces href="" definido todavía -->
+      <div class="col-3 mt-4">
+        <p class="text-end mt-4">
+          @for (content of configButtons; track content; let i = $index){
+          @if(i>0){
+          <a class="btn config">
+            <img [src]=" isEnglish ? content.url2 : content.url" [alt]="isEnglish ? content.alt_en : content.alt"
+              [width]="content.width">
+          </a>
+          } @else{
+          <a class="btn config" (click)="changeLanguage()">
+            <img [src]="isEnglish ? content.url2 : content.url" [alt]="isEnglish ? content.alt_en : content.alt"
+              [width]="content.width">
+          </a>
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <hr class="border-success border-2 my-0">
+  </div>
+  }
+
+  @else if(case === 1){
+  <!-- Header de la plataforma -->
+  <div class="container px-0">
+    <div class="row mt-2 mb-0">
+      <div class="col-2 mt-3 col-sm-1">
+        <img class="img-fluid" src={{imageLogo}} alt="logotipo Copla">
+      </div>
+      <div class="col-6">
+        @if(currentLanguage === 'es') {
+        <h5 class="col-10 mt-2 mb-0">{{platformHeaderText}}</h5>
+        } @else if(currentLanguage === 'en') {
+        <h5 class="col-10 mt-2 mb-0">{{platformHeaderText_en}}</h5>
+        }
+        <h1 class="col-10 mt-0">{{communityName}}</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="col-2 mt-3 mb-0 offset-1">
+        <div class="input-group col-4 mt-3 color-black">
+          @if(currentLanguage === 'es') {
+          <input type="search" autofocus class="form-control rounded-5 my-2 border-1 border-secondary"
+            placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+          } @else if(currentLanguage === 'en') {
+          <input type="search" autofocus class="form-control rounded-5 my-2 border-1 border-secondary"
+            placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          }
+          <button type="button" class="btn">
+            <a class="btn p-0 border-0"><img src='../../../assets/icons/search.png' alt='search button' width=25></a>
+          </button>
+        </div>
+      </div>
+
+      <!-- user / config -->
+      <div class="col-2 mt-3 p-0 me-0">
+        <div class="text-end mt-3 mx-0">
+          <p class="text-end mt-4">
+            @for (content of configButtons; track content; let i = $index){
+            @if(i > 0){
+            <a class="btn config">
+              <img [src]="isEnglish ? content.url: content.url2" [alt]="isEnglish ? content.alt_en : content.alt" [width]="content.width">
+            </a>
+            } @else{
+            <a class="btn config" (click)="changeLanguage()">
+              <img [src]="isEnglish ? content.url2 : content.url" [alt]="isEnglish ? content.alt_en : content.alt"
+                [width]="content.width">
+            </a>
+            }
+            }
+            <button type="button" class="btn config dropdown">
+              <img src='../../../assets/icons/user.png' alt='datos de usuario' width=35 class="dropdown-toggle"
+                data-bs-toggle="dropdown">
+              <ul class="dropdown-menu text-start">
+                <li><a class="dropdown-item">{{completeUserName}}</a></li>
+                @if(currentLanguage === 'es') {
+                <li><a class="dropdown-item">{{userRol}}</a></li>
+                <li><a href='' class="dropdown-item">Ayuda</a></li>
+                <li><a routerLink="/access" class="dropdown-item">Cerrar sesión</a></li>
+                } @else if(currentLanguage === 'en') {
+                <li><a class="dropdown-item">{{userRol_en}}</a></li>
+                <li><a href='' class="dropdown-item">Help</a></li>
+                <li><a routerLink="/access" class="dropdown-item">Log out</a></li>
+                }
+              </ul>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-success border-2 my-0">
+  </div>
+  }
+</header>

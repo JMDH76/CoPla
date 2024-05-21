@@ -1,0 +1,34 @@
+<main>
+  <!-- Formulario -->
+  <div class="container">
+    <div class="row text-black mt-4 mx-auto">
+      <p class="mb-3 col-8 offset-2" [innerHTML]="currentLanguage ==='es' ? initialText.es : initialText.en"></p>
+    </div>
+    <div class="row text-black">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-start mb-0 fw-bold">{{currentLanguage ==='es' ? formTitle.es : formTitle.en}}</h2>
+        <hr class="mt-0 border-2 border-success">
+
+        <!-- fields --> <!-- autofocus -->
+        <form (ngSubmit)="sendEmail()" [formGroup]="contactForm">
+          @for(item of formInputFields; track item;let i =$index){
+          @if(i<3) { <div [ngClass]="{'mt-2': i != 0}" class="form-group">
+            <input type={{item.fieldType}} formControlName={{item.fieldId}}
+              class="form-control form_field border-success" id={{item.fieldId}}
+              [placeholder]="currentLanguage === 'es' ? item.fieldPlaceholder : item.fieldPlaceholder_en">
+      </div>
+      } @else if(i===3){
+      <div class="form-group mt-2">
+        <textarea class="form-control border-success" id={{item.fieldId}} rows="6"
+          [placeholder]="currentLanguage === 'es' ? item.fieldPlaceholder : item.fieldPlaceholder_en"
+          formControlName={{item.fieldId}}></textarea>
+      </div>
+      }
+      }
+      <button type="submit" class="col-2 offset-5 btn send-button mt-4 text-white bg-success">{{currentLanguage ==='es' ?
+        formButtonText.es : formButtonText.en}}</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</main>

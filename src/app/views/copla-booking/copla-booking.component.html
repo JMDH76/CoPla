@@ -1,0 +1,106 @@
+<app-header [case]="case"></app-header>
+
+<main class="flex-fill">
+  <div class="container">
+    <div class="row">
+      <div class="row mt-1 mb-3">
+        <div class="breadcrumb fw-bold text-decoration-none">
+          <a href="../copla-home/" class="text-black text-decoration-none">{{breadcrumb}}&nbsp;&nbsp;></a>
+          <a href="../copla-documents/" class="text-black text-decoration-none">&nbsp;&nbsp;{{currentLanguage==='es' ?
+            actualPage.es : actualPage.en}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <app-copla-aside></app-copla-aside>
+        </div>
+
+        <div class="offset-2 mx-auto mt-0 my-5 col-10">
+          <div class="row d-flex mt-0">
+            <div class="col-5 offset-4 ">
+              <div class="col-8">
+                <div class="scrolling-text warning">
+                  <h5>{{currentLanguage ==='es' ? floatingMessage.es : floatingMessage.en}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3 bg-transparent mb-0">
+
+            <div class="offset-1 col-5 indicator bg-transparent">
+              <h3 class="fw-bold mb-0">{{currentLanguage === 'es' ? 'Reservas' : 'Bookings'}}</h3>
+              <hr class="m-0 border-2 border-success mb-3">
+              <input type="text" [class]="bg" class="col-12 text-center fw-bold border-0" id="availability"
+                [(ngModel)]="availability" readonly>
+            </div>
+          </div>
+
+
+          <div class="row d-flex mt-3">
+            <form [formGroup]="reservationForm" class="offset-1 col-5">
+              <select class="form-select form_field mb-4 border-success" id="installationSelect" autofocus
+                formControlName="installation">
+
+                <option value='Seleccione una instalación...' selected disabled>{{currentLanguage ==='es' ?
+                  reservationOptions[0].text : reservationOptions[0].text_en}}</option>
+                <option value='Sala Social'>{{currentLanguage ==='es' ? reservationOptions[1].text :
+                  reservationOptions[1].text_en}}</option>
+                <option value='Pista de Pádel'>{{currentLanguage ==='es' ? reservationOptions[2].text :
+                  reservationOptions[2].text_en}}</option>
+              </select>
+
+              <div class="d-flex my-4">
+                <div class="col-5 my-3">
+                  <label for="dateSelect" class="form-label fw-bold text-start">{{currentLanguage ==='es' ? 'Seleccione una fecha' :'Select date' }}</label>
+                  <input type="date" class="form-control form_field border-success" id="dateSelect"
+                    formControlName="reservationDate">
+                </div>
+                <div class="offset-2 col-5 my-3">
+                  <label for="timeSelect" class="form-label fw-bold text-start">{{currentLanguage ==='es' ? 'Seleccione una hora' :'Select hour' }}</label>
+                  <select class="form-select form_field border-success" id="timeSelect"
+                    formControlName="reservationTime">
+                    @for(item of timeZone; track item;let i=$index){
+                    <option value={{item.value}}>{{item.select}}</option>
+                    }
+                  </select>
+                </div>
+              </div>
+
+              <div class="row my-5 d-flex justify-content-around">
+                @for(item of buttons; track item;let i=$index){
+                <button type="submit" [disabled]='item.state' class="col-3 btn btn-success px-0 btn-3d"
+                  (click)=clickButton(i+1)>{{currentLanguage ==='es' ? item.text: item.text_en}}</button>
+                }
+              </div>
+            </form>
+            <!-- Next bookings list -->
+            <div class="col-5 offset-1 ms- mt-0">
+              <ul class="list-group">
+                <h4 class="fw-bold mb-0">{{currentLanguage ==='es' ? 'Sus próximas reservas' :'Your next bookings' }}
+                </h4>
+                <hr class="my-0 border-2 border-success">
+
+                @for(item of bookings;track item){
+                <li class="list-group-item border-0 bg-transparent my-0 p-1">
+                  <div class="d-flex m-0 selectedLine">
+                    <p class="col-11 text-decoration-none text-black my-0">
+                      {{item.booking_date}} &nbsp;&nbsp; {{item.booking_time}} &nbsp;&nbsp;
+                      {{item.booking_installation}} </p>
+                    <a class="icon" href=""> <img (click)="$event.preventDefault(); deleteBooking(item.booking_id)"
+                        class="img-fluid opacity-75 trash_icon" src="../../../assets/icons/trash.png"
+                        alt="borrar reserva"></a>
+                  </div>
+                </li>
+                <hr class="m-0 border-secondary border-2">
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-copla-footer></app-copla-footer>

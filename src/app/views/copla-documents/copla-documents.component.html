@@ -1,0 +1,55 @@
+<app-header [case]="case"></app-header>
+
+<main class="flex-fill">
+  <div class="container border-1 border-secondary">
+    <div class="row">
+      <div class="row mt-1 mb-3">
+        <div class="breadcrumb fw-bold text-decoration-none">
+          <a href="../copla-home/" class="text-black text-decoration-none">{{breadcrumb}}&nbsp;&nbsp;></a>
+          <a href="../copla-documents/" class="text-black text-decoration-none">&nbsp;&nbsp;{{currentLanguage ==='es' ? actualPage.es : actualPage.en}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <app-copla-aside></app-copla-aside>
+        </div>
+        <div class="offset-1 mx-auto col-9">
+
+          <form>
+            <div class="mb-3">
+              <label for="docSelect" class="form-label">{{currentLanguage ==='es' ? 'Elija una opción...' :'Please choose an option... ' }}</label>
+              <select class="form-select form_field fst-italic border-success" id="docSelect" autofocus
+                (change)="selectValue($event)">
+                @for(item of selectOptions; track item; let i = $index){
+                <option value={{i+1}}>{{currentLanguage ==='es' ? item.text : item.text_en}}</option>
+                }
+              </select>
+            </div>
+          </form>
+
+          <!-- Listado de documentos -->
+          <ul class="list-group mt-5">
+            <h3 class="fw-bold mb-0">{{currentLanguage ==='es' ? selectOption.es : selectOption.en}}</h3>
+            <hr class="m-0 border-2 border-success">
+            @for(item of listDocuments;track item){
+            <li class="list-group-item border-0 bg-transparent px-0">
+              <div class="selectedLine d-flex">
+                <p class=" col-10 text-decoration-none text-black m-0 me-5">
+                  {{item.document_title}}</p>
+                <a class=" m-0 ms-4 icon" target="_blank" href={{item.document_link}}>
+                  <img class=" img-fluid " src="../../../assets/icons/eye.png" alt="ver documento"></a>
+                @if(selectOption.es != 'Páginas web de interés'){
+                <a class="m-0 ms-4 icon" download href={{item.document_link}}>
+                  <img class="img-fluid " src="../../../assets/icons/download.png" alt="descargar documento"></a>
+                }
+              </div>
+            </li>
+            <hr class="m-0 border-success border-1">
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-copla-footer></app-copla-footer>

@@ -1,0 +1,65 @@
+.header {
+  top: 0;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-nav,
+.nav-link,
+.navbar-brand {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 1px;
+}
+
+.navbar-nav .nav-item .nav-link.active:focus{
+  box-shadow: none;
+  }
+
+
+.navbar-nav .nav-item .nav-link.active {
+  background-color: #198754;
+  color: rgb(255, 255, 255);
+}
+
+.config {
+  border-color: transparent;
+}
+
+.config:active {
+  border-color: transparent;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(25, 135, 84, 0.7);
+  color: white;
+}
+
+.btn-3d {
+  box-shadow: 0 0 0 0 rgba(25, 135, 84, 1);
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-3d:active {
+  box-shadow: 0 0px 0 0 rgba(25, 135, 84, 0.2);
+  transform: translateY(3px);
+}
+
+input:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 0.1rem rgba(111, 175, 39, 0.25);
+}
+
+input:hover{
+  outline: none !important;
+  box-shadow: 0 0 0 0.1rem rgba(111, 175, 39, 0.25);
+}
+
+

@@ -1,0 +1,36 @@
+li {
+  font-size: 14px;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.form_field:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+
+.form_field:hover{
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(111, 175, 39, 0.25);
+}
+
+.icon {
+  opacity: 0.5;
+}
+
+.icon:hover{
+  opacity: 1;
+}
+
+.selectedLine:hover{
+  font-weight: bold;
+  background-color: rgba(25,135,84, 0.1);}
