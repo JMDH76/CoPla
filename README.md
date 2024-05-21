@@ -16,5 +16,5 @@ Acceso repositorio: [Enlace](https://github.com/JMDH76/CoPla)
 | user2      | user2    | Usuario       | 2         |
 | atalaya    | 123456   | Recepción     | 2         |
 
-Una vez descargado el proyecto para arrancar el servidor ejecutar en una terminal el siguiente comando desde la raiz del proyecto:
-`npm run localserver`
+Una vez descargado el proyecto para arrancar el servidor local ejecutar en un terminal el siguiente comando desde la raiz del proyecto:
+`copla/` `npm run localserver`
