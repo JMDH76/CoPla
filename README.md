@@ -3,9 +3,9 @@
 ## José Manuel Domínguez Hernández
 ### Florida Universitaria 2023/24
 
-Acceso a OneDrive: Enlace
+Acceso a OneDrive: [Enlace](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/Ej1p70oKac1OhLMsgm_k24QBqORCVhkxMyLbrS5XOustbw?e=Cwf4cg)
 
-Acceso repositorio: Enlace
+Acceso repositorio: [Enlace](https://github.com/JMDH76/CoPla)
 
 | Usuarios   | Password | Rol           | Comunidad |
 |------------|----------|---------------|-----------|
