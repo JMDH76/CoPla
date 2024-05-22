@@ -7,17 +7,16 @@
 #### Florida Universitaria
 
 
+Acceso OneDrive: [Acceso carpeta con proyecto CoPla en OneDrive](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/EkBeJlLpbj5BtFEBzkHtMnwBDll4rFun-FkWVIpBdUcFhg?e=yoH8KO)
+
+
 **Contenidos:**
-Acceso de OneDrive: [Acceso carpeta con proyecto en OneDrive](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/EkBeJlLpbj5BtFEBzkHtMnwBDll4rFun-FkWVIpBdUcFhg?e=HFyTZs)
 
-
-
-**Contenido de OneDrive:**
-
-- Memoria en pdf y word
-- Fichero SQL con la base de datos
-- Video presentación del proyecto
-- Copia de respaldo del proyecto en zip
+- Memoria word: `Dominguez_Hernandez_JoseManuel_2024_DAW.docx`
+- Memoria pdf: [Dominguez_Hernandez_JoseManuel_2024_DAW.pdf](https://floridauniversitaria-my.sharepoint.com/:b:/g/personal/jodohe_floridauniversitaria_es/EQnmK75dhWdGgOmXKmBSkyQBm9ZD-fQ1OaQjGKC_MMAFFA?e=2PJ7sV)
+- Fichero SQL con la base de datos: `copla.sql`
+- Video presentación del proyecto: [Video presentación](https://floridauniversitaria-my.sharepoint.com/:v:/g/personal/jodohe_floridauniversitaria_es/EY8NAO4tH3BEm-c4fVrW4j8BWXC0TI11gFCTEJp3fcSBEQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=ZSWJUX)
+- Proyecto en zip: `copla.zip`
 
 **BDD**
 La base de datos es local por lo que debe importase el fichero sql a PHPMyAdmin > la BDD debe llamarse `copla`
@@ -25,13 +24,20 @@ La base de datos es local por lo que debe importase el fichero sql a PHPMyAdmin 
 
 **APP**
 
-1. Clonar el repositorio: [Repositorio GitHub](https://github.com/JMDH76/CoPla)
-2. En terminal:
-   1. Nos posicionamos en la carpeta raiz `copla`
-   2. Arracar servidor local     >  `npm run localserver`
-   3. Lanzar proyecto             >  `ng serve`
+Repositorio: [Repositorio GitHub](https://github.com/JMDH76/CoPla) En el repositorio sólo se clona la carpeta `src` por lo que no funciona correctamente, mejor descargar `zip` y descomprimir el proyecto completo.
 
-**USUARIOS**
+1. Descargar y descomprimir la carpeta con el proyecto desde OneDrive: `copla.zip`
+2. Abrir con VSCode
+3. En terminal:
+
+   3.1. Nos posicionamos en la carpeta raiz `copla/`
+
+   3.2. Arracar servidor local     >  `npm run localserver`
+
+   3.3. Lanzar proyecto             >  `ng serve`
+
+
+**SUARIOS**
 Listado de usuarios y roles para probar la aplicación:
 
 
