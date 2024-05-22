@@ -4,9 +4,11 @@
 
 ### Florida Universitaria 2023/24
 
-Acceso a OneDrive: Enlace
+Acceso a OneDrive: [PFC_CoPla](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/EkBeJlLpbj5BtFEBzkHtMnwBDll4rFun-FkWVIpBdUcFhg?e=klVt72)
 
-Acceso repositorio: Enlace
+Acceso repositorio: [Repositorio](https://github.com/JMDH76/CoPla)
+
+##Usuarios de prueba:
 
 
 | Usuarios   | Password | Rol           | Comunidad |
