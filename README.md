@@ -1,14 +1,38 @@
-# PFC CoPla
+# Proyecto de fin de ciclo (PFC): CoPla
 
 ## José Manuel Domínguez Hernández
 
-### Florida Universitaria 2023/24
+### 2º DAW Semipresencial 2023-24
 
-Acceso a OneDrive: [PFC_CoPla](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/EkBeJlLpbj5BtFEBzkHtMnwBDll4rFun-FkWVIpBdUcFhg?e=klVt72)
+#### Florida Universitaria
 
-Acceso repositorio: [Repositorio](https://github.com/JMDH76/CoPla)
 
-##Usuarios de prueba:
+**Contenidos:**
+Acceso de OneDrive: [Acceso carpeta con proyecto en OneDrive](https://floridauniversitaria-my.sharepoint.com/:f:/g/personal/jodohe_floridauniversitaria_es/EkBeJlLpbj5BtFEBzkHtMnwBDll4rFun-FkWVIpBdUcFhg?e=HFyTZs)
+
+
+
+**Contenido de OneDrive:**
+
+- Memoria en pdf y word
+- Fichero SQL con la base de datos
+- Video presentación del proyecto
+- Copia de respaldo del proyecto en zip
+
+**BDD**
+La base de datos es local por lo que debe importase el fichero sql a PHPMyAdmin > la BDD debe llamarse `copla`
+
+
+**APP**
+
+1. Clonar el repositorio: [Repositorio GitHub](https://github.com/JMDH76/CoPla)
+2. En terminal:
+   1. Nos posicionamos en la carpeta raiz `copla`
+   2. Arracar servidor local     >  `npm run localserver`
+   3. Lanzar proyecto             >  `ng serve`
+
+**USUARIOS**
+Listado de usuarios y roles para probar la aplicación:
 
 
 | Usuarios   | Password | Rol           | Comunidad |
@@ -19,6 +43,3 @@ Acceso repositorio: [Repositorio](https://github.com/JMDH76/CoPla)
 | admin2     | admin2   | Administrador | 2         |
 | user2      | user2    | Usuario       | 2         |
 | atalaya    | 123456   | Recepción    | 2         |
-
-Una vez descargado el proyecto para arrancar el servidor ejecutar en una terminal el siguiente comando desde la raiz del proyecto:
-`npm run localserver`
